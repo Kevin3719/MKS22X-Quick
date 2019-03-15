@@ -8,7 +8,6 @@ public class Quick {
     int temp = data[start];
     data[start] = pivot;
     data[select] = temp;
-    int timer= start - end;
     start += 1;
     int temp2 = 0;
     int temp4 = a.nextInt(1);
@@ -20,12 +19,15 @@ public class Quick {
           end -= 1;
       }
       else if(data[start] == pivot) {
-          temp4 += 1;
+          temp4 = a.nextInt(2);
           if (temp4 % 2 == 1) {
           temp2 = data[start];
           data[start] = data[end];
           data[end] = temp2;
           end -= 1;
+        }
+        else {
+          start += 1;
         }
       }
       else {
