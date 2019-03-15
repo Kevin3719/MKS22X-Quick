@@ -11,7 +11,7 @@ public class Quick {
     int timer= start - end;
     start += 1;
     int temp2 = 0;
-    int temp4 = 0;
+    int temp4 = a.nextInt(1);
     while (start <= end) {
       if(data[start] > pivot) {
           temp2 = data[start];
@@ -99,7 +99,7 @@ public class Quick {
     }
     return 0;
    }
-   public static void quickSort(int []data) {
+   public static void quicksort(int []data) {
 
      quickSorthelper(data, 0, data.length - 1);
    }
@@ -128,7 +128,7 @@ public class Quick {
      int[] b = {10, 10, 6,4 ,12}; //, 8, 4 , 3 , 56 , 12 , 6};
      int[] a = {134, 134, 1989, 1268, 1574, 103, 1999, 34, 743, 1252, 1446, 978, 1930, 1331, 159, 37, 533, 1722, 1061, 1868, 923, 1658, 670, 66, 1135, 43, 1569, 190, 1227, 1699, 644, 719, 1170, 1683, 817, 1625, 1344, 1494, 370, 1116, 1918, 438, 1841, 1911, 1277, 1422, 1023, 1563, 799, 51};
      for(int i = 0; i < 1;i++) {
-       quickSort(a);
+       quicksort(a);
        System.out.println(printarray(a));
      }
    }
