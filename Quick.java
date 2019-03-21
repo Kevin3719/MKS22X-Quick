@@ -1,5 +1,16 @@
 import java.util.*;
 public class Quick {
+  public static void insertion(int[] data, int lo, int hi) {
+    for(int i = lo+1; i<hi+1; i++){
+      int temp = data[i];
+      int j = i;
+      while(j>lo && data[j-1]>temp){
+        data[j]=data[j-1];
+        data[j-1]=temp;
+        j -= 1;
+      }
+  }
+}
   public static int partition ( int[] data, int start, int end){
     Random a = new Random();
     int select = start + a.nextInt(end - start + 1);
@@ -106,7 +117,8 @@ public class Quick {
      quickSorthelper(data, 0, data.length - 1);
    }
    public static void quickSorthelper(int[] data, int start, int end) {
-     if(start >= end) {
+     if(end-start <= 100){
+       insertion(data,start,end);
        return;
      }
      int split = partition(data,start,end);
@@ -124,16 +136,6 @@ public class Quick {
 
 
 
-
-
-   public static void main(String[] args) {
-     int[] b = {10, 10, 6,4 ,12}; //, 8, 4 , 3 , 56 , 12 , 6};
-     int[] a = {134, 134, 1989, 1268, 1574, 103, 1999, 34, 743, 1252, 1446, 978, 1930, 1331, 159, 37, 533, 1722, 1061, 1868, 923, 1658, 670, 66, 1135, 43, 1569, 190, 1227, 1699, 644, 719, 1170, 1683, 817, 1625, 1344, 1494, 370, 1116, 1918, 438, 1841, 1911, 1277, 1422, 1023, 1563, 799, 51};
-     for(int i = 0; i < 1;i++) {
-       quicksort(a);
-       System.out.println(printarray(a));
-     }
-   }
 
 
 }
